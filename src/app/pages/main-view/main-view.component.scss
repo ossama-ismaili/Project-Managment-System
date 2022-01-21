@@ -51,6 +51,17 @@
                     text-transform: uppercase;   
                     margin-bottom: 20px;            
                 }
+
+                .tasks-container{
+                    flex-grow: 1;
+                    .task{
+                        display: flex;
+                        padding: 15px 12px;
+                        background-color: white;
+                        box-shadow: 1px 1px 3px 1px #ccc;
+                        margin-bottom: 15px;
+                    }
+                }
             }
         }
     }
