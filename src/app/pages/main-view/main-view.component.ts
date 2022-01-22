@@ -31,7 +31,7 @@ export class MainViewComponent implements OnInit {
         event.previousIndex,
         event.currentIndex,
       );
-      this.boardService.putBoard(this.board).subscribe();
     }
+    this.boardService.putBoard(this.board).subscribe();
   }
 }

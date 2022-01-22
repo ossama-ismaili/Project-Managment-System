@@ -15,8 +15,8 @@
               "due_date": "2022-01-18T08:30"
             },
             {
-              "id": 2,
-              "title": "Develop menu",
+              "id": 3,
+              "title": "User profile",
               "created_at": "2022-01-16T08:30",
               "due_date": "2022-01-18T08:30"
             }
@@ -25,17 +25,38 @@
         {
           "id": 2,
           "name": "Doing",
-          "tasks": []
+          "tasks": [
+            {
+              "id": 2,
+              "title": "Website paramters",
+              "created_at": "2022-01-16T08:30",
+              "due_date": "2022-01-18T08:30"
+            }
+          ]
         },
         {
           "id": 3,
           "name": "In review",
-          "tasks": []
+          "tasks": [
+            {
+              "id": 5,
+              "title": "Develop menu",
+              "created_at": "2022-01-16T08:30",
+              "due_date": "2022-01-18T08:30"
+            }
+          ]
         },
         {
           "id": 4,
           "name": "Done",
-          "tasks": []
+          "tasks": [
+            {
+              "id": 4,
+              "title": "Posts CRUD",
+              "created_at": "2022-01-16T08:30",
+              "due_date": "2022-01-18T08:30"
+            }
+          ]
         }
       ]
     }
