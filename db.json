@@ -1,5 +1,5 @@
 {
-  "tasks":[
+  "tasks": [
       {
           "id": 1,
           "title": "Develop search bar",
@@ -14,5 +14,5 @@
           "due_date": "2022-01-18T08:30",
           "status": 2
       }
-  ] 
+  ]
 }

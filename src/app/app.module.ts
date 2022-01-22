@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MainViewComponent } from './pages/main-view/main-view.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskStatusPipe } from './pipes/task-status.pipe';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TaskStatusPipe } from './pipes/task-status.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
