@@ -9,14 +9,20 @@
           "name": "To do",
           "tasks": [
             {
-              "id": 1,
-              "title": "Develop search bar",
+              "id": 4,
+              "title": "Posts CRUD",
               "created_at": "2022-01-16T08:30",
               "due_date": "2022-01-18T08:30"
             },
             {
               "id": 3,
               "title": "User profile",
+              "created_at": "2022-01-16T08:30",
+              "due_date": "2022-01-18T08:30"
+            },
+            {
+              "id": 2,
+              "title": "Website paramters",
               "created_at": "2022-01-16T08:30",
               "due_date": "2022-01-18T08:30"
             }
@@ -27,17 +33,11 @@
           "name": "Doing",
           "tasks": [
             {
-              "id": 2,
-              "title": "Website paramters",
+              "id": 1,
+              "title": "Develop search bar",
               "created_at": "2022-01-16T08:30",
               "due_date": "2022-01-18T08:30"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "In review",
-          "tasks": [
+            },
             {
               "id": 5,
               "title": "Develop menu",
@@ -47,16 +47,14 @@
           ]
         },
         {
+          "id": 3,
+          "name": "In review",
+          "tasks": []
+        },
+        {
           "id": 4,
           "name": "Done",
-          "tasks": [
-            {
-              "id": 4,
-              "title": "Posts CRUD",
-              "created_at": "2022-01-16T08:30",
-              "due_date": "2022-01-18T08:30"
-            }
-          ]
+          "tasks": []
         }
       ]
     }

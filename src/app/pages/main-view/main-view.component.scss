@@ -18,6 +18,13 @@
             font-size: 20px;
             font-weight: bold;
             color: white;
+            display: inline-block;
+        }
+
+        .add-task-button{
+            background-color: #00b43c;
+            color: white;
+            float: right;
         }
     }
     .board-wrapper{

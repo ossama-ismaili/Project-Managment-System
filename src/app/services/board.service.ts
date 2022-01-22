@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Board } from '../interfaces/board';
 import { apiUrl } from '../helpers/consts';
+import { Task } from '../interfaces/task';
 
 const headerOptions = {
   headers : new HttpHeaders({
@@ -25,5 +26,9 @@ export class BoardService {
 
   putBoard(board: Board):Observable<void>{
     return this.http.put<void>(this.boardApiUrl, board, headerOptions);
+  }
+
+  postTask(task: Task): void{
+    console.log({task});
   }
 }

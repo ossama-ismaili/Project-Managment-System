@@ -1,0 +1,16 @@
+<form class="add-task-form" (ngSubmit)="onSubmit()">
+    <a routerLink="/" class="btn btn-back">back</a>
+    <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" [(ngModel)]="title" />
+    </div>
+    <div class="form-control">
+        <label for="due-date">Due date</label>
+        <input type="datetime-local" name="due-date" id="due-date" [(ngModel)]="dueDate" />
+    </div>
+    <div class="form-control">
+        <label for="description">Description</label>
+        <textarea type="text" name="description" id="description" [(ngModel)]="description"></textarea>
+    </div>
+    <input type="submit" value="Save Task" class="btn btn-submit" />
+</form>
