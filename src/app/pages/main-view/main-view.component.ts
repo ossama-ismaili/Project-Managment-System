@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { TaskService } from 'src/app/services/task.service';
-import { Status } from 'src/app/status';
-import { Task } from 'src/app/task';
+import {CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Task } from 'src/app/interfaces/task';
+import { Board } from 'src/app/interfaces/board';
+import { BoardService } from 'src/app/services/board.service';
 
 @Component({
   selector: 'app-main-view',
@@ -10,39 +10,28 @@ import { Task } from 'src/app/task';
   styleUrls: ['./main-view.component.scss']
 })
 export class MainViewComponent implements OnInit {
-  tasks: Task[] = [];
-  TaskStatus = Status;
+  board: Board = {
+    name: 'Main Board',
+    columns: []
+  };
 
-  constructor(private taskService: TaskService) { }
+  constructor(private boardService: BoardService) { }
 
   ngOnInit(): void {
-    this.taskService.getTask().subscribe((data)=>this.tasks=data);
+    this.boardService.getBoard().subscribe((data)=>this.board=data);
   }
 
   drop(event: CdkDragDrop<Task[]>) {
-    if (event.previousContainer !== event.container) {
-      this.tasks=this.tasks.map((task)=>{
-        if(task.id===event.item.data.id){
-          switch(event.container.id){
-            case 'todo-list':
-              task.status = Status.TODO;
-              break;
-            case 'doing-list':
-              task.status = Status.DOING;
-              break;
-            case 'inreview-list':
-              task.status = Status.INREVIEW;
-              break;
-            case 'done-list':
-              task.status = Status.DONE;
-              break;
-            default :
-              throw new Error("Unkown status");
-          }
-          this.taskService.putTask(task).subscribe();
-        }
-        return task;
-      });
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+      this.boardService.putBoard(this.board).subscribe();
     }
   }
 }

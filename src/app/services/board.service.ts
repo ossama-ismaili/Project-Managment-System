@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Board } from '../interfaces/board';
 import { apiUrl } from '../helpers/consts';
-import { Task } from '../task';
 
 const headerOptions = {
   headers : new HttpHeaders({
@@ -13,16 +13,17 @@ const headerOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
-  private tasksApiUrl:string = `${apiUrl}/tasks`;
+export class BoardService {
+  private boardApiUrl:string = `${apiUrl}/boards/1`;
 
   constructor(private http: HttpClient) { }
   
-  getTask(): Observable<Task[]>{
-    return this.http.get<Task[]>(this.tasksApiUrl);
+
+  getBoard(): Observable<Board>{
+    return this.http.get<Board>(this.boardApiUrl);
   }
 
-  putTask(task: Task): Observable<void>{
-    return this.http.put<void>(`${this.tasksApiUrl}/${task.id}`, task, headerOptions);
+  putBoard(board: Board):Observable<void>{
+    return this.http.put<void>(this.boardApiUrl, board, headerOptions);
   }
 }
