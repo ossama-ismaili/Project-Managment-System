@@ -21,7 +21,6 @@ export class MainViewComponent implements OnInit {
 
   drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer !== event.container) {
-      console.log({event})
       this.tasks=this.tasks.map((task)=>{
         if(task.id===event.item.data.id){
           switch(event.container.id){
@@ -40,10 +39,10 @@ export class MainViewComponent implements OnInit {
             default :
               throw new Error("Unkown status");
           }
+          this.taskService.putTask(task).subscribe();
         }
         return task;
       });
-      console.log({tasks: this.tasks})
     }
   }
 }
